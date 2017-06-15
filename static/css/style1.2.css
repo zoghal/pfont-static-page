@@ -1,6 +1,6 @@
 /* New Style By Hosein Emrani - ThankYou Hosein for your Donate */
 body {
-    font-family: 'Iranian Sans', 'DejaVu Sans', 'Noto Kufi Arabic', 'Droid Arabic Kufi', 'Segoe UI', Tahoma, Helvetica, sans-serif;
+    font-family: Shahab,'Iranian Sans', 'DejaVu Sans', 'Noto Kufi Arabic', 'Droid Arabic Kufi', 'Segoe UI', Tahoma, Helvetica, sans-serif;
     padding-top: 76px;
 }
 
@@ -269,9 +269,9 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 #summery p, h1, li {
-    color: #808285;
-    font-size: 14px;
-    font-weight: 200;
+color: #6a6c6f;
+font-size: 14px;
+    font-weight: 400;
 }
 
 section h1 {
@@ -378,9 +378,27 @@ section h1 {
 /*width: 115px;*/
 /*padding-top: 10px;*/
 /*}*/
-
-#summery {
-    padding: 60px 25px !important;
+#ldate h1{
+    text-align: center;
+    border-bottom: 1px solid silver;
+    margin: 10px 20%;
+}
+#ldate div{
+    display: block;
+    text-align: center;
+    direction: ltr;
+}
+#ldate div a{
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 5px;
+    color: #434343;
+    background: #ddd;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px #555;
+}
+#summery,#ldate {
+    padding: 20px 25px !important;
 }
 
 #home img {
