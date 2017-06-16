@@ -74,7 +74,7 @@
             font-weight: normal;
         }
 
-        #fchange {
+        #fchange,#kerning {
             display: inline-block;
             position: fixed;
             top: 45vh;
@@ -90,8 +90,8 @@
             color: #ffffff;
         }
 
-        #fchange .hidden {
-            display: hidden;
+        #kerning  {
+            margin-top: 45px; 
         }
 
         body.pfont-style {
@@ -102,9 +102,9 @@
 
         body.pfont-style li {
 
-            font-size: 12.5px;
+            font-size: 12.2px;
 
-            line-height: 2;
+            line-height: 2.05;
         }
         body.pfont-style h4 {
             font-size: 16px;
@@ -117,6 +117,9 @@
                 body.pfont-style h3 {
             font-size: 19px;
                         line-height: 1.5;
+        }
+        body.kerningOnOff{
+            font-feature-settings: "kern" 0;
         }
     </style>
     <script src=static/js/jquery.min.js></script>
@@ -142,9 +145,24 @@
         $(document).ready(function () {
 
             $('#fchange').on('click', function () {
+                var body = $('body');
                 $('span', this).toggleClass('hidden');
-                $('body').toggleClass('pfont-style');
-            })
+                body.toggleClass('pfont-style');
+
+                if (body.hasClass('pfont-style') && !body.hasClass('kerningOnOff')){
+                   $('#kerning').trigger('click'); 
+                }
+
+                if (!body.hasClass('pfont-style') && body.hasClass('kerningOnOff')){
+                   $('#kerning').trigger('click'); 
+                }                
+            });
+
+            $('#kerning').on('click', function () {
+                $('span', this).toggleClass('hidden');
+                $('body').toggleClass('kerningOnOff');
+            });
+            
         })
     </script>
 </head>
@@ -166,7 +184,8 @@
             <hr style="border: 1px solid #b5b6b8; width: 94%; position: absolute; top: 45%; z-index: -1; left: 0; right: 0">
         </div>
         <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 justify" style="padding-bottom: 50px;  position: sticky;">
-            <a id="fchange"><span class="hidden">تست فونت ویکی‌پدیا</span><span>تست فونت شهاب</span></a>
+            <a id="fchange"><span class="hidden">تست فونت شهاب</span><span>تست فونت ویکی‌پدیا</span></a>
+            <a id="kerning"><span class="hidden">کرنینگ روشن</span><span>کرنینگ خاموش</span></a>
             <h1>گفتگو با<br>دامون خانجانزاده</h1>
             <p>همه ما حاصل کارهای او را در عمل دیده‌‌ایم. اگر قلم‌های «ویژه» یا «مشکی» را هم ندیده باشید، قلم «دیبا» را در بیلبوردهای
                 سطح شهر می‌توانید ببینید، قلمی که او به نفع کودکان مبتلا به سرطان موسسه محک عرضه کرده است. شاید این قلم‌ها
